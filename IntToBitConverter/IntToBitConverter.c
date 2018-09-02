@@ -1,13 +1,13 @@
 ﻿#include <stdio.h>
 #define MAXPLACE 64
-#define arrSize 11
+#define arrSize 16
 
 int PrintBitsFromInt(int x);
 int getPlaceValueFromInt(double x);
 int printNumBitsFromPlaceArray(int placeArr[]);
 
 int main(int argc, char const *argv[]) {
-  printf("Welcome To Bit Converter. Written by Bennett Dixon 2018.\nEnter a negative value to exit.\n");
+  printf("Welcome To Bit Converter.\nConvert any 16-bit signed integer to a BitRepresentation.\nWritten by Bennett Dixon 2018.\nEnter a negative value to exit.\n");
   int intToConvert;
 
   while (intToConvert >= 0)
@@ -29,6 +29,11 @@ int PrintBitsFromInt(int x)
   {
     return -1;
   }
+  int thirtyThousands = 32678;
+  int sixteenThousands = 16384;
+  int eightThousands = 8192;
+  int fourThousands = 4096;
+  int twoThousands = 2048;
   int oneThousands = 1024;
   int fiveHundreds = 512;
   int twoHundreds = 256;
@@ -42,7 +47,8 @@ int PrintBitsFromInt(int x)
   int ones = 1;
 
 
-  int placesArray[arrSize] = { ones, twos, fours, eights, sixteens, thirtyTwos, sixtyFours, hundredTwentyEights, twoHundreds, fiveHundreds, oneThousands };
+  int placesArray[arrSize] = { ones, twos, fours, eights, sixteens, thirtyTwos, sixtyFours, hundredTwentyEights, twoHundreds, fiveHundreds, oneThousands,
+  twoThousands, fourThousands, eightThousands, sixteenThousands, thirtyThousands };
 
   for (size_t i = arrSize; i > 0; i--)
   {
