@@ -1,5 +1,4 @@
 ﻿#include <stdio.h>
-#define MAXPLACE 64
 #define arrSize 16
 
 int PrintBitsFromInt(int x);
@@ -25,7 +24,8 @@ int main(int argc, char const *argv[]) {
 
 int PrintBitsFromInt(int x)
 {
-  if (x > 32000)
+  if (x > 65355) //65356 is actually the biggest number we can represent w/ current config (although it should be 65445 (1111111111111111)),
+  //but since were using divison there's an issue
   {
     return -1;
   }
@@ -58,6 +58,7 @@ int PrintBitsFromInt(int x)
     {
       placesArray[i - 1] = 1; // set max place to 1 since there is 1 count of it
       placesArray[0] = 0; //since ones place defaults to one, set to 0 since perfect division
+      printf("returning Perfect Result");
       return printNumBitsFromPlaceArray(placesArray);
     }
 
